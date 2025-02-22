@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ 'Presentation' if lang == 'en' else 'Presentación' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function changeLanguage(lang) {
+            window.location.href = "?lang=" + lang;
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: justify;">
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="/">{{ 'Home' if lang == 'en' else 'Inicio' }}</a></li>
+            <li><a href="/projects">{{ 'Projects' if lang == 'en' else 'Proyectos' }}</a></li>
+            <li><a href="/experience">{{ 'Experience' if lang == 'en' else 'Experiencia' }}</a></li>
+            <li><a href="/blog">{{ 'Blog' if lang == 'en' else 'Blog' }}</a></li>
+        </ul>
+        <ul class="language-switch">
+            <li><button onclick="changeLanguage('es')">🇪🇸 Español</button></li>
+            <li><button onclick="changeLanguage('en')">🇬🇧 English</button></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>{{ 'Presentation' if lang == 'en' else 'Presentación' }}</h1>
+        <p>{{ text_presentacion }}</p> <!-- Aquí mostramos el texto de la presentación -->
+    
+        <h1>{{ 'Additional activities' if lang == 'en' else 'Actividades adicionales' }}</h1>
+        <p>{{ text_adicionales }}</p> <!-- Aquí mostramos el texto de actividades adicionales -->
+
+    </section>
+    
+
+    <section class="about-me">
+        <h3>{{ 'Soft Skills' if lang == 'en' else 'Habilidades blandas' }}</h3>
+        <ul>
+            <li>{{ 'Critical Thinking and Problem Solving' if lang == 'en' else  'Pensamiento Crítico y Resolución de Problemas' }}</li>
+            <li>{{ 'Organization and Teamwork' if lang == 'en' else 'Organización y trabajo en equipo' }}</li>
+            <li>{{ 'Effective Communication' if lang == 'en' else 'Comunicación efectiva' }}</li>
+            <li>{{ 'Curiosity and continuous learning' if lang == 'en' else 'Curiosidad y aprendizaje continuo' }}</li>
+        </ul>
+    </section>
+    
+</div>
+</body>
+</html>

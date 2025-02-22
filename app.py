@@ -32,7 +32,7 @@ def index():
     text_presentacion  = translate_text(presentacion, lang) if lang == 'en' else presentacion
     text_adicionales= translate_text(adicionales, lang) if lang == 'en' else adicionales
 
-    
+    #index
     return render_template('index.html', 
                            text_presentacion=text_presentacion, 
                            text_adicionales=text_adicionales, 
